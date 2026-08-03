@@ -1,86 +1,153 @@
-# Rahul Birdi — Portfolio
+# 📱 Rahul Birdi — Portfolio Website
 
-A React (Vite) portfolio built from Rahul Birdi's resume: professional summary,
-technical skills, work experience, projects (ManifestAI, CopePod), education,
-certifications, and contact links (email, phone, GitHub, LinkedIn).
+<div align="center">
 
-## Run it locally
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-5.2.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-3DDC84?style=for-the-badge)
+
+**Building native mobile experiences, screen by screen.**
+
+[Live Demo](#) · [Report Bug](https://github.com/rahulbirdi/My-Portfolio/issues) · [Request Feature](https://github.com/rahulbirdi/My-Portfolio/issues)
+
+</div>
+
+---
+
+## 🌟 Overview
+
+A modern, high-performance portfolio website built for **Rahul Birdi**, React Native & Android App Developer based in Mohali, Punjab.
+
+Designed with a sleek dark glassmorphism aesthetic inspired by **Android Studio's brand green (`#3DDC84`)**, featuring interactive full-screen section presentations, live device mockups, dynamic side indicator navigation, and a direct email messaging suite.
+
+---
+
+## 🚀 Key Features
+
+- 🖥️ **Full-Screen Section Viewport Layout (`100vh`)**: Each major section snaps seamlessly into full view for slide-deck presentation scrolling.
+- 📱 **Interactive Device Mockup**: Animated Android phone frame showcasing real-time build logs and developer stats.
+- 🔍 **Full-Screen Project Inspector**: Dedicated interactive modal overlay providing deep-dive breakdowns of featured projects (**ManifestAI**, **CopePod**).
+- 📍 **Floating Dot Indicator Navigation**: Right-side interactive nav bar tracking section scroll position with live tooltips.
+- 📬 **Direct "Get In Touch" Contact Suite**: Built-in interactive contact box dispatching messages straight to `rahulbirdi75@gmail.com`.
+- ⚙️ **Centralized Data Engine**: All bio, skills, work experience, education, and project content managed in `src/data/content.js`.
+- 🎨 **Android Studio Aesthetic**: Customized tokens, monospaced terminal headers, and npm-package style skill chips.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: React 18, Vite 5, JavaScript (ES6+)
+- **Icons**: Lucide React
+- **Styling**: Vanilla CSS3, Glassmorphism, HSL tailwinds & variables
+- **State & Hooks**: React Custom Hooks (`useScrollSpy`), HTML5 Fullscreen API
+
+---
+
+## 💻 Quick Start
+
+### Prerequisites
+- Node.js (`v16.0.0` or higher)
+- npm (`v8.0.0` or higher)
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/rahulbirdi/My-Portfolio.git
+
+# Navigate into project directory
+cd My-Portfolio
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
 ```
 
-Then open the local URL Vite prints (usually `http://localhost:5173`).
+Open `http://localhost:5173` in your browser to view the portfolio.
 
-To build for production / deployment (Vercel, Netlify, GitHub Pages, etc.):
+---
+
+## 🏗️ Production Build & Deployment
+
+To compile a production-ready static bundle:
 
 ```bash
 npm run build
 ```
 
-The compiled site is written to `dist/`.
+The optimized static assets will be output to the `dist/` directory, ready to deploy to **Vercel**, **Netlify**, or **GitHub Pages**.
 
-## Project structure
+---
 
+## 📂 Project Structure
+
+```text
+My-Portfolio/
+├── index.html                 # Vite HTML entry point
+├── package.json               # Dependencies & scripts
+├── vite.config.js             # Vite compilation config
+├── .gitignore                 # Excluded node_modules, build & cache paths
+└── src/
+    ├── main.jsx               # React DOM root render
+    ├── App.jsx                # Main layout, scroll spy & modal manager
+    ├── data/
+    │   └── content.js         # Single source of truth for portfolio content
+    ├── hooks/
+    │   └── useScrollSpy.js    # Active section scroll observer
+    ├── styles/
+    │   ├── tokens.js          # Design tokens (colors, typography, glass filters)
+    │   └── global.css         # Responsive grid & 100vh scroll snap styling
+    └── components/
+        ├── StatusBar.jsx      # Decorative device status bar strip
+        ├── Header.jsx         # Sticky header with Full Screen toggle button
+        ├── FullScreenDotsNav.jsx # Floating right-side section dot indicators
+        ├── FullScreenProjectModal.jsx # Full-screen project details overlay
+        ├── Hero.jsx           # Hero banner with terminal headline & CTAs
+        ├── PhoneMockup.jsx    # Floating animated Android mockup
+        ├── Summary.jsx        # Professional summary section
+        ├── Skills.jsx         # Skill category grids
+        ├── SkillGroupCard.jsx # Skill group pill container
+        ├── Experience.jsx     # Work experience timeline card
+        ├── Projects.jsx       # Featured mobile project collection
+        ├── ProjectCard.jsx    # Project card with repository & expand controls
+        ├── Education.jsx      # B.Tech degree card
+        ├── Certifications.jsx # Certifications & leadership list
+        ├── Contact.jsx        # Direct Get in Touch email form box
+        ├── Footer.jsx         # Footer copyright & credits
+        ├── BottomTabs.jsx     # Mobile tab bar navigation
+        └── ui/                # Atomic UI components (Tag, Chip, SectionTag)
 ```
-rahul-birdi-portfolio/
-├── index.html                 Vite entry HTML
-├── package.json
-├── vite.config.js
-├── src/
-│   ├── main.jsx                React root
-│   ├── App.jsx                 Composes all sections
-│   ├── data/
-│   │   └── content.js          All resume content lives here — edit this
-│   │                           file to update any text without touching UI code
-│   ├── hooks/
-│   │   └── useScrollSpy.js     Tracks which section is in view
-│   ├── styles/
-│   │   ├── tokens.js           Colors + fonts (design tokens)
-│   │   └── global.css          Font imports, keyframes, responsive grid rules
-│   └── components/
-│       ├── StatusBar.jsx       Decorative device status bar strip
-│       ├── Header.jsx          Sticky top nav (desktop)
-│       ├── Hero.jsx            Hero section with headline + CTAs
-│       ├── PhoneMockup.jsx     Animated phone mockup used in the hero
-│       ├── Summary.jsx         Professional summary section
-│       ├── Skills.jsx / SkillGroupCard.jsx
-│       ├── Experience.jsx      Work experience section
-│       ├── Projects.jsx / ProjectCard.jsx
-│       ├── Education.jsx
-│       ├── Certifications.jsx
-│       ├── Contact.jsx         Contact CTAs (email, phone, GitHub, LinkedIn)
-│       ├── Footer.jsx
-│       ├── BottomTabs.jsx      Mobile bottom tab bar (React Navigation-style)
-│       └── ui/
-│           ├── Tag.jsx         Small inline mono label
-│           ├── Chip.jsx        Package-style pill for skills/tech
-│           └── SectionTag.jsx  JSX-tag-styled section headers
-```
 
-## Editing content
+---
 
-Everything text-based (name, contact info, summary, skills, experience,
-projects, education, certifications) lives in `src/data/content.js`. Update
-that file and every component that uses it updates automatically — no need
-to touch component files for content changes.
+## ✏️ Customizing Content
 
-## Design notes
+Updating portfolio content is fast and straightforward:
 
-- Accent color `#3DDC84` is Android Studio's own brand green — a deliberate
-  callback to "Android applications" throughout the resume.
-- Section headers render as JSX opening/closing tags
-  (`<ProfessionalSummary>` … `</ProfessionalSummary>`).
-- Skill chips are styled like npm package names.
-- Navigation is a top bar on desktop and a bottom tab bar on mobile — a nod
-  to React Navigation's tab navigator.
-- Respects `prefers-reduced-motion` and includes visible keyboard focus
-  states throughout.
+Edit [src/data/content.js](file:///d:/project/rahul-birdi-portfolio/src/data/content.js) to modify:
+- Contact information (`email`, `location`, `github`, `linkedin`)
+- Profile summary text
+- Technical skill groups & packages
+- Experience timeline & project bullets
 
-## Notes on data sourcing
+All components reactively re-render updated data automatically without editing UI components.
 
-Content is sourced from the uploaded resume and the two GitHub repository
-links included in it (ManifestAI, CopePod). Live GitHub/LinkedIn profile
-data was not available to fetch automatically — update `content.js` directly
-if you'd like to add more from those profiles.
+---
+
+## 📬 Contact & Connect
+
+**Rahul Birdi** — *React Native & Mobile App Developer*
+
+- 📧 **Email**: [rahulbirdi75@gmail.com](mailto:rahulbirdi75@gmail.com)
+- 🐙 **GitHub**: [github.com/rahulbirdi](https://github.com/rahulbirdi)
+- 💼 **LinkedIn**: [linkedin.com/in/rahul-birdi-196b70317](https://www.linkedin.com/in/rahul-birdi-196b70317)
+- 📍 **Location**: Mohali, Punjab
+
+---
+
+<div align="center">
+  <sub>Designed & Developed with ❤️ for Rahul Birdi's Mobile Engineering Portfolio.</sub>
+</div>
